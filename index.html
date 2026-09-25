@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isseu Leye — Développeuse Web</title>
+  <meta name="description" content="Portfolio d'Isseu Leye - Développeuse Web & Étudiante en Licence Informatique. Création de sites web modernes, rapides et responsives.">
+  <meta name="author" content="Isseu Leye">
+  <meta name="theme-color" content="#FAFAF8">
+
+  <!-- Aperçu lors des partages (WhatsApp, LinkedIn...).
+       Après la mise en ligne, remplacez "img/og-image.jpg" par l'adresse complète,
+       ex. https://isseuleye.netlify.app/img/og-image.jpg -->
+  <meta property="og:title" content="Isseu Leye — Développeuse Web">
+  <meta property="og:description" content="Création de sites web modernes, épurés et responsives.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Thème et langue appliqués avant l'affichage pour éviter le flash -->
+  <script>
+    document.documentElement.classList.add('js');
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+        var l = localStorage.getItem('lang');
+        if (l) document.documentElement.setAttribute('lang', l);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23111'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='%23C6A15B'>IL</text></svg>">
+</head>
+<body>
+  <script src="js/icons.js"></script>
+
+  <a href="#main" class="skip-link" data-i18n="skip">Aller au contenu</a>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="brand" aria-label="Isseu Leye">
+        <span class="brand-mark">IL</span>
+        <span class="brand-name">Isseu Leye</span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Navigation">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link" data-i18n="nav.about">À propos</a></li>
+          <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
+          <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Compétences</a></li>
+          <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projets</a></li>
+          <li><a href="#journey" class="nav-link" data-i18n="nav.journey">Parcours</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+
+        <!-- Actions du menu mobile -->
+        <div class="nav-mobile-extra">
+          <button class="btn btn-primary" data-open-cv>
+            <svg class="icon"><use href="#i-file-lines-o"></use></svg>
+            <span data-i18n="nav.cv">Mon CV</span>
+          </button>
+          <div class="nav-mobile-toggles">
+            <button class="icon-btn lang-btn" data-lang-toggle aria-label="English version">EN</button>
+            <button class="icon-btn" data-theme-toggle aria-label="Thème clair / sombre">
+              <svg class="icon icon-moon"><use href="#i-moon"></use></svg>
+              <svg class="icon icon-sun"><use href="#i-sun"></use></svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn lang-btn desk-only" id="lang-toggle" data-lang-toggle aria-label="English version">EN</button>
+        <button class="icon-btn desk-only" id="theme-toggle" data-theme-toggle aria-label="Thème clair / sombre">
+          <svg class="icon icon-moon"><use href="#i-moon"></use></svg>
+          <svg class="icon icon-sun"><use href="#i-sun"></use></svg>
+        </button>
+        <button class="btn btn-primary btn-sm nav-cv desk-only" data-open-cv>
+          <svg class="icon"><use href="#i-file-lines-o"></use></svg>
+          <span data-i18n="nav.cv">Mon CV</span>
+        </button>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ==================== ACCUEIL ==================== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="pill reveal">
+            <span class="pulse-dot"></span>
+            <span data-i18n="hero.pill">Disponible pour stage & projets freelance</span>
+          </span>
+
+          <h1 class="hero-title reveal" data-i18n="hero.title">Je crée des sites web <em>élégants</em> qui donnent envie de rester.</h1>
+
+          <p class="hero-lead reveal" data-i18n="hero.lead">
+            Je suis <strong>Isseu Leye</strong>, développeuse web et étudiante en Licence Informatique à Saint-Louis.
+            Je conçois des interfaces modernes, rapides et responsives — du code sur-mesure à WordPress.
+          </p>
+
+          <div class="hero-cta reveal">
+            <a href="#projects" class="btn btn-primary">
+              <span data-i18n="hero.cta1">Voir mes projets</span>
+              <svg class="icon arrow"><use href="#i-arrow-right"></use></svg>
+            </a>
+            <a href="#contact" class="btn btn-ghost">
+              <span data-i18n="hero.cta2">Me contacter</span>
+            </a>
+          </div>
+
+          <ul class="hero-socials reveal social-list">
+            <li hidden><a data-link="github" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="icon"><use href="#i-github"></use></svg></a></li>
+            <li hidden><a data-link="linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin-in"></use></svg></a></li>
+            <li><a href="https://wa.me/221775505695" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg class="icon"><use href="#i-whatsapp"></use></svg></a></li>
+            <li><a href="mailto:isseuleye10@gmail.com" aria-label="Email"><svg class="icon"><use href="#i-envelope"></use></svg></a></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-photo">
+            <img src="img/isseu-leye.webp"
+                 srcset="img/isseu-leye-600.webp 600w, img/isseu-leye.webp 1000w"
+                 sizes="(max-width: 640px) 420px, 560px"
+                 width="1000" height="1250"
+                 alt="Isseu Leye"
+                 fetchpriority="high" decoding="async">
+          </div>
+
+          <div class="float-badge badge-a">
+            <svg class="icon"><use href="#i-mobile-screen"></use></svg>
+            <div><strong>100%</strong><span>Responsive</span></div>
+          </div>
+          <div class="float-badge badge-b">
+            <svg class="icon"><use href="#i-wordpress"></use></svg>
+            <div><strong>WordPress</strong><span>& WooCommerce</span></div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="↓">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ==================== À PROPOS ==================== -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-portrait reveal">
+          <div class="portrait-frame">
+            <img src="img/isseu-about.webp"
+                 srcset="img/isseu-about-600.webp 600w, img/isseu-about.webp 1000w"
+                 sizes="(max-width: 860px) 380px, 480px"
+                 width="1000" height="1250"
+                 alt="Isseu Leye"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="portrait-tag">
+            <svg class="icon"><use href="#i-location-dot"></use></svg> Saint-Louis, Sénégal
+          </div>
+        </div>
+
+        <div class="about-text">
+          <span class="eyebrow reveal" data-i18n="about.eyebrow">01 — Profil</span>
+          <h2 class="section-title reveal" data-i18n="about.title">Du code propre, <em>un design réfléchi.</em></h2>
+          <p class="reveal" data-i18n="about.p1">
+            Passionnée par le développement web et étudiante en <strong>Licence Informatique</strong>,
+            je conçois des interfaces modernes, simples et élégantes, pensées d'abord pour les utilisateurs.
+          </p>
+          <p class="reveal" data-i18n="about.p2">
+            Ma formation m'apporte des bases solides en algorithmique et en bases de données ; mes projets
+            me permettent de les mettre en pratique, du site vitrine à la boutique en ligne.
+          </p>
+
+          <div class="stats reveal">
+            <div class="stat"><strong id="stat-projects">6</strong><span data-i18n="about.stat1">Projets réalisés</span></div>
+            <div class="stat"><strong>6</strong><span data-i18n="about.stat2">Technologies</span></div>
+            <div class="stat"><strong>2025</strong><span data-i18n="about.stat3">Début du parcours</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SERVICES ==================== -->
+    <section class="section section-alt" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow reveal" data-i18n="services.eyebrow">02 — Services</span>
+          <h2 class="section-title reveal" data-i18n="services.title">Ce que je peux <em>faire pour vous</em></h2>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <span class="service-num">01</span>
+            <div class="service-icon"><svg class="icon"><use href="#i-laptop-code"></use></svg></div>
+            <h3 data-i18n="services.s1.t">Sites vitrines sur-mesure</h3>
+            <p data-i18n="services.s1.d">Des sites rapides et élégants codés en HTML, CSS et JavaScript, qui reflètent votre identité.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-num">02</span>
+            <div class="service-icon"><svg class="icon"><use href="#i-wordpress-simple"></use></svg></div>
+            <h3 data-i18n="services.s2.t">WordPress & e-commerce</h3>
+            <p data-i18n="services.s2.d">Sites WordPress faciles à gérer et boutiques WooCommerce prêtes à vendre.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-num">03</span>
+            <div class="service-icon"><svg class="icon"><use href="#i-mobile-screen-button"></use></svg></div>
+            <h3 data-i18n="services.s3.t">Intégration responsive</h3>
+            <p data-i18n="services.s3.d">Des maquettes transformées en pages parfaitement adaptées au mobile, à la tablette et au PC.</p>
+          </article>
+        </div>
+
+        <!-- Méthode de travail -->
+        <div class="method">
+          <h3 class="method-title reveal" data-i18n="method.title">Ma méthode, <em>en trois étapes</em></h3>
+          <ol class="method-steps">
+            <li class="method-step reveal">
+              <span class="method-icon"><svg class="icon"><use href="#i-ear-listen"></use></svg></span>
+              <div>
+                <h4 data-i18n="method.s1.t">Écouter</h4>
+                <p data-i18n="method.s1.d">Je prends le temps de comprendre vos besoins, votre public et vos objectifs.</p>
+              </div>
+            </li>
+            <li class="method-step reveal">
+              <span class="method-icon"><svg class="icon"><use href="#i-pen-ruler"></use></svg></span>
+              <div>
+                <h4 data-i18n="method.s2.t">Concevoir</h4>
+                <p data-i18n="method.s2.d">Maquette, choix techniques et développement, avec des points réguliers.</p>
+              </div>
+            </li>
+            <li class="method-step reveal">
+              <span class="method-icon"><svg class="icon"><use href="#i-rocket"></use></svg></span>
+              <div>
+                <h4 data-i18n="method.s3.t">Livrer</h4>
+                <p data-i18n="method.s3.d">Un site testé sur tous les écrans, mis en ligne et facile à prendre en main.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== COMPÉTENCES ==================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow reveal" data-i18n="skills.eyebrow">03 — Stack</span>
+          <h2 class="section-title reveal" data-i18n="skills.title">Compétences & <em>outils</em></h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card reveal">
+            <div class="skill-icon"><svg class="icon"><use href="#i-html5"></use></svg></div>
+            <div><h3>HTML5</h3><p data-i18n="skills.html">Structure sémantique & accessibilité</p></div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon"><svg class="icon"><use href="#i-css3-alt"></use></svg></div>
+            <div><h3>CSS3</h3><p data-i18n="skills.css">Flexbox, Grid & animations fluides</p></div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon"><svg class="icon"><use href="#i-js"></use></svg></div>
+            <div><h3>JavaScript</h3><p data-i18n="skills.js">ES6+, DOM & interactivité</p></div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon"><svg class="icon"><use href="#i-wordpress"></use></svg></div>
+            <div><h3>WordPress</h3><p>Elementor & WooCommerce</p></div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon"><svg class="icon"><use href="#i-mobile-screen"></use></svg></div>
+            <div><h3>Responsive Design</h3><p data-i18n="skills.rwd">Mobile, tablette & ordinateur</p></div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon"><svg class="icon"><use href="#i-database"></use></svg></div>
+            <div><h3 data-i18n="skills.cs.t">Bases informatiques</h3><p data-i18n="skills.cs.d">Algorithmique & SQL / MySQL</p></div>
+          </div>
+        </div>
+
+        <div class="marquee reveal">
+          <div class="marquee-track">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>WordPress</span><span>Elementor</span><span>WooCommerce</span><span>Bootstrap</span><span>Git</span><span>MySQL</span><span>SEO</span>
+            <span aria-hidden="true">HTML5</span><span aria-hidden="true">CSS3</span><span aria-hidden="true">JavaScript</span><span aria-hidden="true">WordPress</span><span aria-hidden="true">Elementor</span><span aria-hidden="true">WooCommerce</span><span aria-hidden="true">Bootstrap</span><span aria-hidden="true">Git</span><span aria-hidden="true">MySQL</span><span aria-hidden="true">SEO</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJETS ==================== -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <div class="section-head section-head-split">
+          <div>
+            <span class="eyebrow reveal" data-i18n="projects.eyebrow">04 — Portfolio</span>
+            <h2 class="section-title reveal" data-i18n="projects.title">Projets <em>sélectionnés</em></h2>
+          </div>
+          <div class="filters reveal" aria-label="Filtres">
+            <button class="filter-btn active" data-filter="all" data-i18n="projects.all">Tous</button>
+            <button class="filter-btn" data-filter="js">JavaScript</button>
+            <button class="filter-btn" data-filter="wp">WordPress</button>
+            <button class="filter-btn" data-filter="algo" data-i18n="projects.algo">Algorithmique</button>
+          </div>
+        </div>
+
+        <!-- Les cartes sont générées à partir de js/projects.js -->
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- ==================== PARCOURS ==================== -->
+    <section class="section" id="journey">
+      <div class="container journey-grid">
+        <div class="journey-intro">
+          <span class="eyebrow reveal" data-i18n="journey.eyebrow">05 — Parcours</span>
+          <h2 class="section-title reveal" data-i18n="journey.title">Formation & <em>apprentissage</em></h2>
+          <p class="reveal" data-i18n="journey.intro">Un parcours qui allie sens de la communication, fondamentaux informatiques et pratique du développement web.</p>
+
+          <div class="now-card reveal">
+            <span class="now-label"><span class="pulse-dot"></span> <span data-i18n="now.label">En ce moment</span></span>
+            <ul>
+              <li><svg class="icon"><use href="#i-graduation-cap"></use></svg> <span data-i18n="now.1">Licence Informatique en cours</span></li>
+              <li><svg class="icon"><use href="#i-code"></use></svg> <span data-i18n="now.2">Approfondissement de JavaScript</span></li>
+              <li><svg class="icon"><use href="#i-briefcase"></use></svg> <span data-i18n="now.3">À la recherche d'un stage</span></li>
+            </ul>
+          </div>
+
+          <button class="btn btn-ghost reveal" data-open-cv>
+            <svg class="icon"><use href="#i-file-lines-o"></use></svg>
+            <span data-i18n="journey.cv">Consulter mon CV</span>
+          </button>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline-item reveal">
+            <span class="timeline-year" data-i18n="journey.t1.y">2025 — En cours</span>
+            <h3 data-i18n="journey.t1.t">Licence en Informatique</h3>
+            <p data-i18n="journey.t1.d">Formation universitaire — Algorithmique, bases de données SQL, systèmes & réseaux.</p>
+          </li>
+          <li class="timeline-item reveal">
+            <span class="timeline-year" data-i18n="journey.t2.y">Depuis 2025</span>
+            <h3 data-i18n="journey.t2.t">Développement Web Frontend & WordPress</h3>
+            <p data-i18n="journey.t2.d">Projets pratiques — HTML5, CSS3, JavaScript ES6+ et CMS.</p>
+          </li>
+          <li class="timeline-item reveal">
+            <span class="timeline-year">2025</span>
+            <h3 data-i18n="journey.t3.t">Baccalauréat Littéraire</h3>
+            <p data-i18n="journey.t3.d">Aisance rédactionnelle, esprit d'analyse et sens de la communication.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-info">
+            <div class="contact-person">
+              <img src="img/isseu-avatar.webp" width="320" height="320" alt="Isseu Leye" class="avatar" loading="lazy" decoding="async">
+              <div>
+                <strong>Isseu Leye</strong>
+                <span><span class="pulse-dot"></span> <span data-i18n="contact.available">Disponible pour échanger</span></span>
+              </div>
+            </div>
+            <span class="eyebrow eyebrow-light" data-i18n="contact.eyebrow">06 — Contact</span>
+            <h2 class="contact-title" data-i18n="contact.title">Un projet en tête ? <em>Parlons-en.</em></h2>
+            <p data-i18n="contact.lead">Stage, collaboration ou site web : je vous réponds rapidement.</p>
+
+            <ul class="contact-list">
+              <li>
+                <span class="c-icon"><svg class="icon"><use href="#i-envelope"></use></svg></span>
+                <div class="c-body"><small>Email</small><a href="mailto:isseuleye10@gmail.com">isseuleye10@gmail.com</a></div>
+                <button type="button" class="copy-btn" id="copy-email" aria-label="Copier l'adresse email">
+                  <svg class="icon icon-copy"><use href="#i-copy-o"></use></svg>
+                  <svg class="icon icon-done"><use href="#i-check"></use></svg>
+                  <span data-i18n="contact.copy">Copier</span>
+                </button>
+              </li>
+              <li>
+                <span class="c-icon"><svg class="icon"><use href="#i-whatsapp"></use></svg></span>
+                <div class="c-body"><small data-i18n="contact.phone">WhatsApp / Téléphone</small><a href="https://wa.me/221775505695" target="_blank" rel="noopener noreferrer">+221 77 550 56 95</a></div>
+              </li>
+              <li>
+                <span class="c-icon"><svg class="icon"><use href="#i-location-dot"></use></svg></span>
+                <div class="c-body"><small data-i18n="contact.location">Localisation</small><span>Saint-Louis (Pikine), Sénégal</span></div>
+              </li>
+            </ul>
+          </div>
+
+          <form id="contact-form" class="contact-form" novalidate>
+            <!-- Piège anti-spam : invisible pour les humains -->
+            <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div class="form-row">
+              <div class="field">
+                <label for="name" data-i18n="form.name">Nom</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom" data-i18n-placeholder="form.name.ph" autocomplete="name" required>
+                <span class="field-err" id="name-error"></span>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="vous@exemple.com" data-i18n-placeholder="form.email.ph" autocomplete="email" required>
+                <span class="field-err" id="email-error"></span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="subject" data-i18n="form.subject">Sujet</label>
+              <select id="subject" name="subject">
+                <option value="Proposition de stage" data-i18n="form.opt1">Proposition de stage</option>
+                <option value="Création de site web" data-i18n="form.opt2">Création de site web</option>
+                <option value="Collaboration" data-i18n="form.opt3">Collaboration</option>
+                <option value="Autre" data-i18n="form.opt4">Autre</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Parlez-moi de votre projet..." data-i18n-placeholder="form.msg.ph" required></textarea>
+              <span class="field-err" id="message-error"></span>
+            </div>
+            <button type="submit" class="btn btn-gold btn-block" id="submit-btn">
+              <span data-i18n="form.send">Envoyer le message</span>
+              <svg class="icon"><use href="#i-paper-plane"></use></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="#hero" class="brand">
+        <span class="brand-mark">IL</span>
+        <span class="brand-name">Isseu Leye</span>
+      </a>
+      <p class="footer-copy">&copy; <span id="current-year">2026</span> Isseu Leye · <span data-i18n="footer">Conçu et développé avec soin.</span></p>
+      <div class="footer-links social-list">
+        <a href="mailto:isseuleye10@gmail.com" aria-label="Email"><svg class="icon"><use href="#i-envelope"></use></svg></a>
+        <a href="https://wa.me/221775505695" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg class="icon"><use href="#i-whatsapp"></use></svg></a>
+        <a data-link="github" hidden target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="icon"><use href="#i-github"></use></svg></a>
+        <a data-link="linkedin" hidden target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin-in"></use></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="↑">
+    <svg class="icon"><use href="#i-arrow-up"></use></svg>
+  </button>
+
+  <!-- ==================== TOAST ==================== -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast-icon" id="toast-icon"><svg class="icon"><use href="#i-check"></use></svg></span>
+    <div>
+      <div class="toast-title" id="toast-title"></div>
+      <div class="toast-msg" id="toast-msg"></div>
+    </div>
+    <button class="toast-close" id="toast-close" aria-label="×">&times;</button>
+  </div>
+
+  <!-- ==================== MODALE CV ==================== -->
+  <div class="modal" id="cv-modal" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title">
+    <div class="modal-window modal-cv">
+      <div class="modal-head">
+        <h3 id="cv-modal-title">Curriculum Vitae</h3>
+        <div class="modal-actions">
+          <a class="btn btn-primary btn-sm" id="cv-download" href="cv/Isseu-Leye-CV.pdf" download>
+            <svg class="icon"><use href="#i-download"></use></svg> <span data-i18n="cv.download">Télécharger le PDF</span>
+          </a>
+          <button class="modal-close" data-close aria-label="×">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body modal-body-cv">
+        <iframe id="cv-frame" title="Curriculum Vitae" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODALE PROJET ==================== -->
+  <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="pm-title">
+    <div class="modal-window">
+      <div class="modal-head">
+        <h3 id="pm-title"></h3>
+        <button class="modal-close" data-close aria-label="×">&times;</button>
+      </div>
+      <div class="modal-body" id="pm-body"></div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

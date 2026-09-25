@@ -1,0 +1,12 @@
+# Fichiers système et métadonnées
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+
+# Photos originales brutes volumineuses (> 35 Mo non utilisées par le site)
+img/CAP*.png
+
+# Dossiers temporaires / éditeurs
+.vscode/
+.idea/

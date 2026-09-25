@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet — Isseu Leye</title>
+  <meta name="description" content="Étude de cas d'un projet réalisé par Isseu Leye, développeuse web.">
+  <meta name="author" content="Isseu Leye">
+  <meta name="theme-color" content="#FAFAF8">
+
+  <script>
+    document.documentElement.classList.add('js');
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+        var l = localStorage.getItem('lang');
+        if (l) document.documentElement.setAttribute('lang', l);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23111'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='%23C6A15B'>IL</text></svg>">
+</head>
+<body class="case-page" data-dynamic-title="1">
+  <script src="js/icons.js"></script>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <header class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="brand" aria-label="Isseu Leye">
+        <span class="brand-mark">IL</span>
+        <span class="brand-name">Isseu Leye</span>
+      </a>
+      <div class="nav-actions">
+        <button class="icon-btn lang-btn" id="lang-toggle" data-lang-toggle aria-label="English version">EN</button>
+        <button class="icon-btn" id="theme-toggle" data-theme-toggle aria-label="Thème clair / sombre">
+          <svg class="icon icon-moon"><use href="#i-moon"></use></svg>
+          <svg class="icon icon-sun"><use href="#i-sun"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenu généré à partir de js/projects.js -->
+  <main id="case"></main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">IL</span>
+        <span class="brand-name">Isseu Leye</span>
+      </a>
+      <p class="footer-copy">&copy; <span id="current-year">2026</span> Isseu Leye · <span data-i18n="footer">Conçu et développé avec soin.</span></p>
+      <div class="footer-links social-list">
+        <a href="mailto:isseuleye10@gmail.com" aria-label="Email"><svg class="icon"><use href="#i-envelope"></use></svg></a>
+        <a href="https://wa.me/221775505695" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg class="icon"><use href="#i-whatsapp"></use></svg></a>
+        <a data-link="github" hidden target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="icon"><use href="#i-github"></use></svg></a>
+        <a data-link="linkedin" hidden target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin-in"></use></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="↑">
+    <svg class="icon"><use href="#i-arrow-up"></use></svg>
+  </button>
+
+  <script src="js/config.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/case.js"></script>
+</body>
+</html>
