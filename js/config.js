@@ -11,8 +11,8 @@ window.SITE = {
   whatsapp: '221775505695',            // numéro sans + ni espaces
 
   // Vos profils (URL complètes). Vide = icône masquée.
-  github: '',                          // ex. 'https://github.com/isseuleye'
-  linkedin: '',                        // ex. 'https://www.linkedin.com/in/isseu-leye'
+  github: 'https://github.com/isseuleye10-boop',
+  linkedin: '',
 
   // Formulaire de contact : créez une clé gratuite sur https://web3forms.com
   // (entrez votre email, la clé arrive par mail) et collez-la ici.
